@@ -32,24 +32,6 @@ class Usercard extends Component {
     });
   };
 
-  //   getNewUser = () => {
-  //     const [searchRes, searchFollowerRes] = [
-  //       axios.get(`https://api.github.com/users/${this.state.searchUser}`),
-  //       axios.get(
-  //         `https://api.github.com/users/${this.state.searchUser}/followers`
-  //       )
-  //     ];
-  //     console.log(searchRes);
-  //     console.log(searchFollowerRes);
-  //     // this.setState({
-  //     //   pic: searchRes.data.avatar_url,
-  //     //   name: searchRes.data.name,
-  //     //   login: searchRes.data.login,
-  //     //   profileLink: searchRes.data.html_url,
-  //     //   followers: searchFollowerRes.data
-  //     // });
-  //   };
-
   getNewUser = () => {
     axios
       .get(`https://api.github.com/users/${this.state.searchUser}`)
@@ -59,14 +41,12 @@ class Usercard extends Component {
           name: res.data.name,
           login: res.data.login,
           profileLink: res.data.html_url
-          //   followers: followerRes.data
         });
         axios
           .get(
             `https://api.github.com/users/${this.state.searchUser}/followers`
           )
           .then(res => {
-            console.log(res);
             this.setState({
               followers: res.data
             });
