@@ -1,5 +1,6 @@
 import React from "react";
 import Usercard from "./components/Usercard";
+import "./index.css";
 
 function App() {
   return (

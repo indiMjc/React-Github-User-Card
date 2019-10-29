@@ -4,6 +4,7 @@
   align-items: center;
   padding: 30px;
   border: 2px solid black;
+  background: linear-gradient(141deg, #ffffff 0%, #a1a1a1 51%, #949596 75%);
   border-radius: 10px;
   width: 400px;
   box-shadow: 0 3px 12px -6px black;
