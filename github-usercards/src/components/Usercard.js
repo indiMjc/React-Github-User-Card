@@ -32,7 +32,13 @@ class Usercard extends Component {
     });
   };
 
-  getNewUser = () => {};
+  getNewUser = () => {
+    axios
+      .get(`https://api.github.com/users/${this.state.searchUser}`)
+      .then(res => {
+        console.log(res);
+      });
+  };
 
   render() {
     return (
@@ -51,7 +57,7 @@ class Usercard extends Component {
             type="text"
             placeholder="Enter username"
           />
-          <button>Search github</button>
+          <button onClick={this.getNewUser}>Search github</button>
         </div>
       </div>
     );
