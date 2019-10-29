@@ -7,6 +7,10 @@ class Usercard extends Component {
       .get("https://api.github.com/users/indiMjc")
       .then(res => {
         console.log(res);
+        console.log(res.data.avatar_url);
+        console.log(res.data.name);
+        console.log(res.data.login);
+        console.log(res.data.html_url);
       })
       .catch(err => {
         console.log("The data was not returned", err);
