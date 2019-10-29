@@ -1,7 +1,6 @@
 import React from "react";
 
 const Followers = props => {
-  console.log(props);
   return (
     <>
       <h2>Followers:</h2>

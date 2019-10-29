@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Followers from "./Followers";
+import "./usercard.css";
 
 class Usercard extends Component {
   state = {
@@ -31,14 +32,8 @@ class Usercard extends Component {
         <h1>Name: {this.state.name}</h1>
         <h2>Login: {this.state.login}</h2>
         <a href={this.state.profileLink}>Github</a>
+        <hr />
         <Followers followers={this.state.followers} />
-        {/* <h2>Followers:</h2>
-        {this.state.followers.map(follower => (
-          <div className="followers" key={follower.id}>
-            <a href={follower.html_url}>{follower.login}</a>
-            <br />
-          </div>
-        ))} */}
       </div>
     );
   }
