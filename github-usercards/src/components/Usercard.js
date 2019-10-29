@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import axios from "axios";
 
 class Usercard extends Component {
+  state = {
+    name: "",
+    login: "",
+    profileLink: ""
+  };
   componentDidMount() {
     axios
       .get("https://api.github.com/users/indiMjc")
@@ -11,6 +16,11 @@ class Usercard extends Component {
         console.log(res.data.name);
         console.log(res.data.login);
         console.log(res.data.html_url);
+        this.setState({
+          name: res.data.name,
+          login: res.data.login,
+          profileLink: res.data.html_url
+        });
       })
       .catch(err => {
         console.log("The data was not returned", err);
