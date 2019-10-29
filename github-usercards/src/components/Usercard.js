@@ -9,7 +9,8 @@ class Usercard extends Component {
     name: "",
     login: "",
     profileLink: "",
-    followers: []
+    followers: [],
+    searchUser: ""
   };
   async componentDidMount() {
     const [userRes, followerRes] = await Promise.all([
@@ -25,15 +26,33 @@ class Usercard extends Component {
     });
   }
 
+  handleChanges = e => {
+    this.setState({
+      searchUser: e.target.value
+    });
+  };
+
+  getNewUser = () => {};
+
   render() {
     return (
-      <div className="card-contain">
-        <img src={this.state.pic} alt="User" />
-        <h1>Name: {this.state.name}</h1>
-        <h2>Login: {this.state.login}</h2>
-        <a href={this.state.profileLink}>Github</a>
-        <hr />
-        <Followers followers={this.state.followers} />
+      <div className="main">
+        <div className="card-contain">
+          <img src={this.state.pic} alt="User" />
+          <h1>Name: {this.state.name}</h1>
+          <h2>Login: {this.state.login}</h2>
+          <a href={this.state.profileLink}>Github</a>
+          <hr />
+          <Followers followers={this.state.followers} />
+        </div>
+        <div className="search">
+          <input
+            onChange={this.handleChanges}
+            type="text"
+            placeholder="Enter username"
+          />
+          <button>Search github</button>
+        </div>
       </div>
     );
   }
